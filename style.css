@@ -1,0 +1,104 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#gradient {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+
+.card-wrapper {
+  width: 280px;
+  cursor: pointer;
+}
+
+.card {
+  width: 280px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.card-wrapper.active .card {
+  transform: rotateY(180deg);
+}
+
+.side {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.side-b {
+  transform: rotateY(180deg);
+}
+
+.heart-half {
+  transform: rotate(-45deg) scale(.8);
+  margin: auto;
+}
+
+.circle, .rect {
+  width: 280px;
+  height: 280px;
+  background: #ff5c8a;
+  transition: background 1s;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.rect {
+  margin-top: -140px;
+}
+
+.title {
+  position: absolute;
+  top: 40%;
+  right: 15%;
+  font-size: 36px;
+  color: #ff0a54;
+  transform: rotate(45deg);
+}
+
+.ijustcode {
+  position: absolute;
+  top: 45%;
+  right: -40%;
+}
+
+audio {
+  display: none;
+}
+
+/* CONFETTI */
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.confetti {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
